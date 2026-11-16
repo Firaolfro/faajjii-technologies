@@ -12,17 +12,14 @@ import {
   CheckCircle2,
   AlertTriangle,
   Building2,
-  DollarSign,
-  TrendingUp,
 } from "lucide-react";
 
 interface ErpDemoModalProps {
   isOpen: boolean;
   onClose: () => void;
-  initialTab?: string;
 }
 
-export function ErpDemoModal({ isOpen, onClose, initialTab = "inventory" }: ErpDemoModalProps) {
+export function ErpDemoModal({ isOpen, onClose }: ErpDemoModalProps) {
   const [activeTab, setActiveTab] = useState<"inventory" | "invoicing" | "hr" | "hospitality">(
     "inventory"
   );
@@ -42,10 +39,9 @@ export function ErpDemoModal({ isOpen, onClose, initialTab = "inventory" }: ErpD
   const [invoiceTin, setInvoiceTin] = useState("0049281726");
   const [invoiceAmount, setInvoiceAmount] = useState(145000);
   const [invoiceTax, setInvoiceTax] = useState(21750); // 15% VAT
-  const [invoiceGenerated, setInvoiceGenerated] = useState(false);
 
   // 3. HR State
-  const [employees, setEmployees] = useState([
+  const [employees] = useState([
     { id: "EMP-01", name: "Abebe Kebede", role: "Senior Systems Engineer", dept: "Engineering", status: "Present", salary: "48,000 ETB" },
     { id: "EMP-02", name: "Hiwot Tadesse", role: "UI/UX Product Designer", dept: "Product", status: "Present", salary: "36,000 ETB" },
     { id: "EMP-03", name: "Kassahun Bekele", role: "Hardware Logistics Lead", dept: "Operations", status: "On Leave", salary: "30,000 ETB" },
